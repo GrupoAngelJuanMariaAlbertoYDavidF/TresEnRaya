@@ -10,22 +10,15 @@ import modelo.MyBotonera;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
+import java.awt.FlowLayout;
 
 public class FramePrincipal extends JFrame {
 
 	private JPanel contentPane;
-	private JPanel panelTresEnRaya;
+	protected MyBotonera panelTresEnRaya;
 	private JPanel panelBotones;
 	private JPanel panelInfo;
-	private JButton btnNewButton;
-	private JButton btnNewButton_1;
-	private JButton btnNewButton_2;
-	private JButton btnNewButton_3;
-	private JButton btnNewButton_4;
-	private JButton btnNewButton_5;
-	private JButton btnNewButton_6;
-	private JButton btnNewButton_7;
-	private JButton btnNewButton_8;
+	
 
 	/**
 	 * Launch the application.
@@ -53,25 +46,22 @@ public class FramePrincipal extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
+		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
 		
 		panelInfo = new JPanel();
-		panelInfo.setBounds(10, 310, 801, 152);
 		contentPane.add(panelInfo);
 		
 		panelBotones = new JPanel();
-		panelBotones.setBounds(10, 10, 206, 290);
 		contentPane.add(panelBotones);
 		
 		panelTresEnRaya = new MyBotonera();
-		panelTresEnRaya.setBounds(226, 10, 585, 290);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 0, 0));
 		
 		
 	}
 
-	public JPanel getPanelTresEnRaya() {
+	public MyBotonera getPanelTresEnRaya() {
 	
 		return panelTresEnRaya;
 	}
