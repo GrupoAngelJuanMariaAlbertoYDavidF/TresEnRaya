@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import modelo.MyBotonera;
+
 import java.awt.GridLayout;
 import javax.swing.JButton;
 
@@ -60,40 +63,16 @@ public class FramePrincipal extends JFrame {
 		panelBotones.setBounds(10, 10, 206, 290);
 		contentPane.add(panelBotones);
 		
-		panelTresEnRaya = new JPanel();
+		panelTresEnRaya = new MyBotonera();
 		panelTresEnRaya.setBounds(226, 10, 585, 290);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 0, 0));
 		
-		btnNewButton_1 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_1);
 		
-		btnNewButton_3 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_3);
-		
-		btnNewButton_5 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_5);
-		
-		btnNewButton_8 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_8);
-		
-		btnNewButton_2 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_2);
-		
-		btnNewButton_7 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_7);
-		
-		btnNewButton_6 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_6);
-		
-		btnNewButton_4 = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton_4);
-		
-		btnNewButton = new JButton("New button");
-		panelTresEnRaya.add(btnNewButton);
 	}
 
 	public JPanel getPanelTresEnRaya() {
+	
 		return panelTresEnRaya;
 	}
 
