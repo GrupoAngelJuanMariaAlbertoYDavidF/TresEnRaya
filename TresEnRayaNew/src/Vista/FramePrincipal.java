@@ -56,7 +56,7 @@ public class FramePrincipal extends JFrame {
 		
 		panelTresEnRaya = new MyBotonera();
 		contentPane.add(panelTresEnRaya);
-		panelTresEnRaya.setLayout(new GridLayout(3, 3, 0, 0));
+		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
 		
 		
 	}

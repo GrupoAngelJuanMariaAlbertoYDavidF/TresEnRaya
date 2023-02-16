@@ -24,7 +24,7 @@ public class MyBotonera extends JPanel {
 				botonera[i][j].addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-				System.out.println("hola soy "+((MyBoton)e.getSource()).getCoordenada().toString());
+					
 				}
 			});
 			this.add(botonera[i][j] );
