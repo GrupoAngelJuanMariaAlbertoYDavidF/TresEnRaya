@@ -67,7 +67,7 @@ public class MyBotonera extends JPanel {
 		return botonera;
 	}
 
-	public  getTurno() {
+	public int getTurno() {
 		return turno;
 	}
 
