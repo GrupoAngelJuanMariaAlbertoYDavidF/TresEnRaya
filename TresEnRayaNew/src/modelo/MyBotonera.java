@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import Control.GestionDatosPartida;
 import Vista.FramePrincipal;
 import modelo.*;
 
@@ -15,6 +16,8 @@ public class MyBotonera extends JPanel {
 	private int coordenadaX;
 	private int coordenadaY;
 	private int turno;
+	private Tablero tablero;
+
 		
 	public MyBotonera() {
 		crearBotones();
@@ -28,11 +31,11 @@ public class MyBotonera extends JPanel {
 				botonera[i][j].addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-
+						GestionDatosPartida gestionDatosPartida = new GestionDatosPartida(0);
 						MyBoton boton = (MyBoton) e.getSource();
 						coordenadaX = boton.getCoordenada().getX();
 						coordenadaY = boton.getCoordenada().getY();
-						if(turno<6) {
+						if(gestionDatosPartida.getTurno()<6) {
 							if (turno%2==0) {
 								
 								boton.setText("X");
@@ -40,7 +43,9 @@ public class MyBotonera extends JPanel {
 							}else {
 								boton.setText("O");
 							}
-							turno++;
+							gestionDatosPartida.setTurno(turno++);
+							
+							
 						}
 
 					}
