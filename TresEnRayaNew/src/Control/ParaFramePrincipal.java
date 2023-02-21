@@ -8,12 +8,17 @@ public class ParaFramePrincipal extends FramePrincipal {
 		
 	public ParaFramePrincipal() {
 		super();
-		StringBuilder turno= new StringBuilder (getPanelTresEnRaya().getTurno());
-		String turnoConvertido = turno.toString(); 
-		getLblNumeroMovimientosJX().setText(turnoConvertido);
+		
 		
 		
 		}
+	
+	public void  aztualizarTurnos() {
+		StringBuilder turno= new StringBuilder (getPanelTresEnRaya().getTurno());
+		String turnoConvertido = turno.toString(); 
+		getLblNumeroMovimientosJX().setText(turnoConvertido);
+	}
+		
 
 	}
 		
