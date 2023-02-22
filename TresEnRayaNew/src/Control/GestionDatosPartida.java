@@ -9,6 +9,8 @@ public class GestionDatosPartida {
 	private int turno=0;
 	private int fichasLibres;
 	private int fichaColumna[][]=new int [3][1];
+	private Coordenada posicionAnterior;
+	private Coordenada posicionNueva;
 	
 	public GestionDatosPartida() {
 		super();
@@ -54,6 +56,22 @@ public class GestionDatosPartida {
 
 	public void setVictoria(boolean victoria) {
 		Victoria = victoria;
+	}
+
+	public Coordenada getPosicionAnterior() {
+		return posicionAnterior;
+	}
+
+	public void setPosicionAnterior(Coordenada posicionAnterior) {
+		this.posicionAnterior = posicionAnterior;
+	}
+
+	public Coordenada getPosicionNueva() {
+		return posicionNueva;
+	}
+
+	public void setPosicionNueva(Coordenada posicionNueva) {
+		this.posicionNueva = posicionNueva;
 	}
 	
 	

@@ -39,24 +39,17 @@ public class MyBotonera extends JPanel {
 					public void actionPerformed(ActionEvent e) {
 
 						MyBoton boton = (MyBoton) e.getSource();
-
-						if (gestionDatosPartida.getTurno() < 6) {
-							if (gestionDatosPartida.getTurno() % 2 == 0) {
-								boton.setText("X");
-								gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 1);
-
-							} else {
-								boton.setText("O");
-								gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 2);
-								
-							}
-							gestionDatosPartida.setTurno(gestionDatosPartida.getTurno() + 1);
-
+						
+						colocarFichasParaTurnoMenorDeSeis(boton);
+						
+						if (gestionDatosPartida.getTurno()>6) {
+							colocarFichaaTurnoMayorQueSeis(boton, gestionDatosPartida);
+							moverFicha(boton, gestionDatosPartida);
 						}
-						
-						
-						gestionDatosPartida.setVictoria(gestionDatosPartida.tablero.comprobarTresEnRaya());
+						comprovacionTresEnRaya();
 						comprobarVictoria();
+						
+						
 					}
 
 				});
@@ -98,6 +91,47 @@ public class MyBotonera extends JPanel {
 		}
 
 	}
+	public void colocarFichasParaTurnoMenorDeSeis(MyBoton boton) {
+		if (gestionDatosPartida.getTurno() <= 5) {
+			if (gestionDatosPartida.getTurno() % 2 == 0 && boton.getText().equals("") )  {
+				boton.setText("X");
+				gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 1);
+
+			} if(gestionDatosPartida.getTurno() % 2 != 0 && boton.getText().equals("") ){
+				boton.setText("O");
+				gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 2);
+				
+			}
+			gestionDatosPartida.setTurno(gestionDatosPartida.getTurno() + 1);
+
+		}
+		
+	}
+	public void comprovacionTresEnRaya() {
+		gestionDatosPartida.setVictoria(gestionDatosPartida.tablero.comprobarTresEnRaya());
 	
+	}
+	public void colocarFichaaTurnoMayorQueSeis(MyBoton boton, GestionDatosPartida tablero) {
+		
+		if (boton.getText().equalsIgnoreCase("X") && gestionDatosPartida.tablero.comprobarBloqueada(boton.getCoordenada())==true){
+			gestionDatosPartida.setPosicionAnterior(boton.getCoordenada());
+			gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 0);
+			boton.setText("");
+		}else {
+			
+			
+			
+		}
+		
+		
+		
+	}
+	public void moverFicha(MyBoton boton, GestionDatosPartida gestionDatosPartida) {
+		Coordenada posicionNueva=boton.getCoordenada();
+		if (posicionNueva!=gestionDatosPartida.getPosicionAnterior() && boton.getText().equalsIgnoreCase("O"))
+		gestionDatosPartida.tablero.setValorPosicion(posicionNueva, 1);
+		
+		
+	}
 	
 }
