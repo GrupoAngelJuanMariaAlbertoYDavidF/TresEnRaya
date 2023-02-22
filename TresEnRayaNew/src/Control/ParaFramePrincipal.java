@@ -12,15 +12,13 @@ public class ParaFramePrincipal extends FramePrincipal {
 	public ParaFramePrincipal() {
 		super();
 		
+
 		
-		}
+		
+	}
 	
 	public void  aztualizarMensajeVictoria() {
-		if (gestionDatosPartida.isVictoria()==true) {
-			lblMensajeVictoria = new MyLabelVictory("");
-			panelBotones.add(lblMensajeVictoria);
-			}
-		
+	
 	}
 	
 		

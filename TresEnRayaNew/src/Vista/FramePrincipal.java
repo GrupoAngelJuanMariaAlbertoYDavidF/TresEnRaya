@@ -27,24 +27,12 @@ public class FramePrincipal extends JFrame {
 	private JLabel lblNumeroMovimientosJX;
 	private JLabel lblNumeroMovimientosJO;
 	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
-	public MyLabelVictory lblMensajeVictoria;
+	private MyLabelVictory lblMensajeVictori;
 	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FramePrincipal frame = new FramePrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
+
+
 
 	/**
 	 * Create the frame.
@@ -87,9 +75,12 @@ public class FramePrincipal extends JFrame {
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
 		
-	
+		lblMensajeVictori = new MyLabelVictory("New label");
+		panelBotones.add(lblMensajeVictori);
 		
-		panelTresEnRaya = new MyBotonera();
+		
+		
+		panelTresEnRaya = new MyBotonera(lblMensajeVictori);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
 		
@@ -117,8 +108,12 @@ public class FramePrincipal extends JFrame {
 		return lblNumeroMovimientosJO;
 	}
 
-	public JLabel getLblMensajeVictoria() {
-		return lblMensajeVictoria;
+	public MyLabelVictory getLblMensajeVictori() {
+		return lblMensajeVictori;
+	}
+
+	public void setLblMensajeVictori(MyLabelVictory lblMensajeVictori) {
+		this.lblMensajeVictori = lblMensajeVictori;
 	}
 
 	
