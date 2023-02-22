@@ -6,7 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Control.GestionDatosPartida;
+import modelo.GestionDatos;
 import modelo.MyBotonera;
+import modelo.MyLabelVictory;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -19,10 +22,12 @@ public class FramePrincipal extends JFrame {
 
 	private JPanel contentPane;
 	protected MyBotonera panelTresEnRaya;
-	private JPanel panelBotones;
+	protected JPanel panelBotones;
 	private JPanel panelInfo;
 	private JLabel lblNumeroMovimientosJX;
 	private JLabel lblNumeroMovimientosJO;
+	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
+	public MyLabelVictory lblMensajeVictoria;
 	
 
 	/**
@@ -82,6 +87,8 @@ public class FramePrincipal extends JFrame {
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
 		
+	
+		
 		panelTresEnRaya = new MyBotonera();
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
@@ -109,4 +116,10 @@ public class FramePrincipal extends JFrame {
 	public JLabel getLblNumeroMovimientosJO() {
 		return lblNumeroMovimientosJO;
 	}
+
+	public JLabel getLblMensajeVictoria() {
+		return lblMensajeVictoria;
+	}
+
+	
 }
