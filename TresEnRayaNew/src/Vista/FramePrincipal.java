@@ -17,6 +17,7 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class FramePrincipal extends JFrame {
 
@@ -75,7 +76,9 @@ public class FramePrincipal extends JFrame {
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
 		
-		lblMensajeVictori = new MyLabelVictory("New label");
+		lblMensajeVictori = new MyLabelVictory("");
+		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
+		lblMensajeVictori.setForeground(new Color(0, 255, 64));
 		panelBotones.add(lblMensajeVictori);
 		
 		

@@ -6,7 +6,7 @@ import modelo.Tablero;
 public class GestionDatosPartida {
 	private boolean Victoria;
 	public Tablero tablero = new Tablero();
-	private int turno=0;
+	private int turno;
 	private int fichasLibres;
 	private int fichaColumna[][]=new int [3][1];
 	private Coordenada posicionAnterior;
@@ -15,6 +15,7 @@ public class GestionDatosPartida {
 	public GestionDatosPartida() {
 		super();
 		Victoria=false;
+		turno=0;
 		
 		
 	}
@@ -72,6 +73,10 @@ public class GestionDatosPartida {
 
 	public void setPosicionNueva(Coordenada posicionNueva) {
 		this.posicionNueva = posicionNueva;
+	}
+	public void aumentarTurno() {
+		setTurno(getTurno()+1);
+		
 	}
 	
 	

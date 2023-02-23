@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.Arrays;
+
 public class Tablero {
 	public int tablero[][] = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
@@ -95,5 +97,10 @@ public class Tablero {
 					if (getValorPosicion(new Coordenada(x, y))  == 0)
 						return true;
 		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Tablero [tablero=" + Arrays.toString(tablero) + "]";
 	}
 }
