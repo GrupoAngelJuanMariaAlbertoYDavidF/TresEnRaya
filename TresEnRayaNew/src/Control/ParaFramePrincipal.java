@@ -1,26 +1,32 @@
 package Control;
 
+import java.awt.GridLayout;
+
 import Vista.FramePrincipal;
 import modelo.MyBoton;
 import modelo.MyBotonera;
+import modelo.MyLabelVictory;
 
 public class ParaFramePrincipal extends FramePrincipal {
 		
 	public ParaFramePrincipal() {
 		super();
 		
+
 		
 		
-		}
+	}
 	
-	public void  aztualizarTurnos() {
-		StringBuilder turno= new StringBuilder (getPanelTresEnRaya().getTurno());
-		String turnoConvertido = turno.toString(); 
-		getLblNumeroMovimientosJX().setText(turnoConvertido);
+	public void  aztualizarMensajeVictoria() {
+	
+	}
+	
+		
+		
 	}
 		
 
-	}
+	
 		
 	
 

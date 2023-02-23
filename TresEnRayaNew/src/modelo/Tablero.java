@@ -1,7 +1,9 @@
 package modelo;
 
+import java.util.Arrays;
+
 public class Tablero {
-	public int tablero[][] = { { 0, 0, 0 }, { 0, 1, 0 }, { 0, 0, 0 } };
+	public int tablero[][] = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
 	public int getValorPosicion(Coordenada coordenada) {
 		return tablero[coordenada.getX()][coordenada.getY()];
@@ -42,9 +44,9 @@ public class Tablero {
 	 * @return true si se da la circunstancia
 	 */
 	private boolean compruebaDiagonal() {
-		if (tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2])
+		if (tablero[0][0] == tablero[1][1] && tablero[1][1] == tablero[2][2]&& tablero[1][1]!= 0 )
 			return true;
-		if (tablero[0][2] == tablero[1][1] && tablero[1][1] == tablero[2][0])
+		if (tablero[0][2] == tablero[1][1] && tablero[1][1] == tablero[2][0] && tablero[1][1]!= 0)
 			return true;
 		return false;
 	}
@@ -95,5 +97,10 @@ public class Tablero {
 					if (getValorPosicion(new Coordenada(x, y))  == 0)
 						return true;
 		return false;
+	}
+
+	@Override
+	public String toString() {
+		return "Tablero [tablero=" + Arrays.toString(tablero) + "]";
 	}
 }

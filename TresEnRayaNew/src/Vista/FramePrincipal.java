@@ -6,7 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import Control.GestionDatosPartida;
+import modelo.GestionDatos;
 import modelo.MyBotonera;
+import modelo.MyLabelVictory;
 
 import java.awt.GridLayout;
 import javax.swing.JButton;
@@ -14,32 +17,23 @@ import java.awt.FlowLayout;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class FramePrincipal extends JFrame {
 
 	private JPanel contentPane;
 	protected MyBotonera panelTresEnRaya;
-	private JPanel panelBotones;
+	protected JPanel panelBotones;
 	private JPanel panelInfo;
 	private JLabel lblNumeroMovimientosJX;
 	private JLabel lblNumeroMovimientosJO;
+	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
+	private MyLabelVictory lblMensajeVictori;
 	
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					FramePrincipal frame = new FramePrincipal();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+	
+
+
 
 	/**
 	 * Create the frame.
@@ -82,7 +76,14 @@ public class FramePrincipal extends JFrame {
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
 		
-		panelTresEnRaya = new MyBotonera();
+		lblMensajeVictori = new MyLabelVictory("");
+		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
+		lblMensajeVictori.setForeground(new Color(0, 255, 64));
+		panelBotones.add(lblMensajeVictori);
+		
+		
+		
+		panelTresEnRaya = new MyBotonera(lblMensajeVictori);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
 		
@@ -109,4 +110,14 @@ public class FramePrincipal extends JFrame {
 	public JLabel getLblNumeroMovimientosJO() {
 		return lblNumeroMovimientosJO;
 	}
+
+	public MyLabelVictory getLblMensajeVictori() {
+		return lblMensajeVictori;
+	}
+
+	public void setLblMensajeVictori(MyLabelVictory lblMensajeVictori) {
+		this.lblMensajeVictori = lblMensajeVictori;
+	}
+
+	
 }
