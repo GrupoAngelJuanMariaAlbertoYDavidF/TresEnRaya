@@ -22,7 +22,7 @@ public class MyBotonera extends JPanel {
 	private int coordenadaY;
 	private int turno;
 	private int numeroTablero;
-	private int moverFicha;
+	private int moverFicha; 
 
 	public MyBotonera(MyLabelVictory myLabelVictory) {
 		this.myLabelVictory = myLabelVictory;
@@ -40,12 +40,12 @@ public class MyBotonera extends JPanel {
 					public void actionPerformed(ActionEvent e) {
 
 						MyBoton boton = (MyBoton) e.getSource();
-						if (gestionDatosPartida.getTurno() <= 6) {
+						if (gestionDatosPartida.getTurno() <= 6) { 
 							colocarFichas(boton);
 							System.out.println(gestionDatosPartida.getTurno());
 						}
 						if (gestionDatosPartida.getTurno() > 6) {
-							switch (moverFicha) {
+							switch (moverFicha) { //PUEDE TOCARSE
 							case 0: {
 								moverFicha = colocarFichaaTurnoMayorQueSeis(boton, gestionDatosPartida);
 								cogerPosicionAntigua(boton);
@@ -75,7 +75,8 @@ public class MyBotonera extends JPanel {
 								throw new IllegalArgumentException("Unexpected value: " + moverFicha);
 							}
 
-						}
+						} 
+						//NO SE PUEDE TOCAR
 						comprovacionTresEnRaya();
 						comprobarVictoria();
 					}
@@ -158,7 +159,7 @@ public class MyBotonera extends JPanel {
 		return 0;
 	}
 
-	public void colocarFichasX(MyBoton boton) {
+	public void colocarFichasX(MyBoton boton) { //Puede TOCARSE
 
 		if (gestionDatosPartida.getPosicionAnterior() != gestionDatosPartida.getPosicionNueva()&& !boton.getText().equalsIgnoreCase("O")) {
 			gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 1);
@@ -168,7 +169,7 @@ public class MyBotonera extends JPanel {
 		}
 	}
 
-	public void colocarFichasO(MyBoton boton) {
+	public void colocarFichasO(MyBoton boton) { //PUEDE TOCARSE
 
 		if (gestionDatosPartida.getPosicionAnterior() != gestionDatosPartida.getPosicionNueva() && !boton.getText().equalsIgnoreCase("X")) {
 			gestionDatosPartida.tablero.setValorPosicion(boton.getCoordenada(), 2);
