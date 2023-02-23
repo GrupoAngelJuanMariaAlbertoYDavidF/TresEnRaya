@@ -25,8 +25,6 @@ public class FramePrincipal extends JFrame {
 	protected MyBotonera panelTresEnRaya;
 	protected JPanel panelBotones;
 	private JPanel panelInfo;
-	private JLabel lblNumeroMovimientosJX;
-	private JLabel lblNumeroMovimientosJO;
 	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
 	private MyLabelVictory lblMensajeVictori;
 	
@@ -51,32 +49,18 @@ public class FramePrincipal extends JFrame {
 		contentPane.add(panelInfo);
 		panelInfo.setLayout(null);
 		
-		JLabel lblMovimientosJX = new JLabel("Movimientos JX:");
-		lblMovimientosJX.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblMovimientosJX.setBounds(22, 93, 179, 86);
-		panelInfo.add(lblMovimientosJX);
-		
-		JLabel lblMovimientosJo = new JLabel("Movimientos JO:");
-		lblMovimientosJo.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblMovimientosJo.setBounds(22, 255, 179, 86);
-		panelInfo.add(lblMovimientosJo);
-		
-		lblNumeroMovimientosJX = new JLabel("0");
-		lblNumeroMovimientosJX.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumeroMovimientosJX.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblNumeroMovimientosJX.setBounds(188, 93, 72, 86);
-		panelInfo.add(lblNumeroMovimientosJX);
-		
-		lblNumeroMovimientosJO = new JLabel("0");
-		lblNumeroMovimientosJO.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumeroMovimientosJO.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblNumeroMovimientosJO.setBounds(188, 255, 72, 86);
-		panelInfo.add(lblNumeroMovimientosJO);
+		JLabel lblTitulo = new JLabel("TRES EN RAYA");
+		lblTitulo.setForeground(new Color(255, 0, 0));
+		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 33));
+		lblTitulo.setBounds(10, 105, 471, 213);
+		panelInfo.add(lblTitulo);
 		
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
+		panelBotones.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		lblMensajeVictori = new MyLabelVictory("");
+		lblMensajeVictori.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		lblMensajeVictori.setForeground(new Color(0, 255, 64));
 		panelBotones.add(lblMensajeVictori);
@@ -118,6 +102,4 @@ public class FramePrincipal extends JFrame {
 	public void setLblMensajeVictori(MyLabelVictory lblMensajeVictori) {
 		this.lblMensajeVictori = lblMensajeVictori;
 	}
-
-	
 }
