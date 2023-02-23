@@ -42,14 +42,14 @@ public class MyBotonera extends JPanel {
 						MyBoton boton = (MyBoton) e.getSource();
 
 						colocarFichasParaTurnoMenorDeSeis(boton);
-
+							/// SOLO ESTOO
 						if (gestionDatosPartida.getTurno() >= 6 && moverFicha == false) {
 							moverFicha = colocarFichaaTurnoMayorQueSeis(boton, gestionDatosPartida, moverFicha);
 							cogerPosicionAntigua(boton);
 						} if (moverFicha==true){
 							moverFicha(boton, gestionDatosPartida, moverFicha);
 						}
-
+							///// LO demas FUNCIONA
 						comprovacionTresEnRaya();
 						comprobarVictoria();
 					}
