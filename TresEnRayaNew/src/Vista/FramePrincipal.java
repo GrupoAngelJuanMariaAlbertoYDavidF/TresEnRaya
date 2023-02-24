@@ -25,13 +25,8 @@ public class FramePrincipal extends JFrame {
 	protected MyBotonera panelTresEnRaya;
 	protected JPanel panelBotones;
 	private JPanel panelInfo;
-	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
+	protected GestionDatosPartida gestionDatosPartida = new GestionDatosPartida();
 	private MyLabelVictory lblMensajeVictori;
-	
-
-	
-
-
 
 	/**
 	 * Create the frame.
@@ -44,38 +39,35 @@ public class FramePrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panelInfo = new JPanel();
 		contentPane.add(panelInfo);
 		panelInfo.setLayout(null);
-		
+
 		JLabel lblTitulo = new JLabel("TRES EN RAYA");
 		lblTitulo.setForeground(new Color(255, 0, 0));
 		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 33));
 		lblTitulo.setBounds(10, 105, 471, 213);
 		panelInfo.add(lblTitulo);
-		
+
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
 		panelBotones.setLayout(new GridLayout(0, 1, 0, 0));
-		
+
 		lblMensajeVictori = new MyLabelVictory("");
 		lblMensajeVictori.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
 		lblMensajeVictori.setForeground(new Color(0, 255, 64));
 		panelBotones.add(lblMensajeVictori);
-		
-		
-		
+
 		panelTresEnRaya = new MyBotonera(lblMensajeVictori);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
-		
-		
+
 	}
 
 	public MyBotonera getPanelTresEnRaya() {
-	
+
 		return panelTresEnRaya;
 	}
 
@@ -85,14 +77,6 @@ public class FramePrincipal extends JFrame {
 
 	public JPanel getPanelInfo() {
 		return panelInfo;
-	}
-
-	public JLabel getLblNumeroMovimientosJX() {
-		return lblNumeroMovimientosJX;
-	}
-
-	public JLabel getLblNumeroMovimientosJO() {
-		return lblNumeroMovimientosJO;
 	}
 
 	public MyLabelVictory getLblMensajeVictori() {

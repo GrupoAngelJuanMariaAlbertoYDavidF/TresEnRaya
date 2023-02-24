@@ -78,8 +78,18 @@ public class GestionDatosPartida {
 		setTurno(getTurno()+1);
 		
 	}
-	
-	
-	
+	public void imprimirTablero() {
+		  for (int i = 0; i < tablero.tablero.length; i++) {
+	            for (int j = 0; j < tablero.tablero.length; j++) {
+	                System.out.print(this.tablero.tablero[i][j] + "|");
+	            }
+	            System.out.println();
+	        }
+	        System.out.println();
+	    }
 	
 }
+	
+	
+	
+
