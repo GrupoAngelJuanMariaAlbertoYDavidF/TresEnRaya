@@ -161,9 +161,14 @@ public class MyBotonera extends JPanel {
 		gestionDatosPartida.imprimirTablero();
 		
 
+		
 		return 0;
 	}
+	
 
+	
+	
+	
 	public void colocarFichasX(MyBoton boton) { //Puede TOCARSE
 
 		if (gestionDatosPartida.getPosicionAnterior() != gestionDatosPartida.getPosicionNueva()  && boton.getText().equalsIgnoreCase("")) {
