@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Control.GestionDatosPartida;
-import modelo.GestionDatos;
 import modelo.MyBotonera;
 import modelo.MyLabelVictory;
 
@@ -42,12 +41,12 @@ public class FramePrincipal extends JFrame {
 
 		panelInfo = new JPanel();
 		contentPane.add(panelInfo);
-		panelInfo.setLayout(null);
+		panelInfo.setLayout(new GridLayout(0, 1, 0, 0));
 
 		JLabel lblTitulo = new JLabel("TRES EN RAYA");
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblTitulo.setForeground(new Color(255, 0, 0));
-		lblTitulo.setFont(new Font("Tahoma", Font.PLAIN, 33));
-		lblTitulo.setBounds(10, 105, 471, 213);
+		lblTitulo.setFont(new Font("Source Serif Pro", Font.PLAIN, 33));
 		panelInfo.add(lblTitulo);
 
 		panelBotones = new JPanel();
@@ -56,7 +55,7 @@ public class FramePrincipal extends JFrame {
 
 		lblMensajeVictori = new MyLabelVictory("");
 		lblMensajeVictori.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
+		lblMensajeVictori.setFont(new Font("Source Serif Pro", Font.PLAIN, 34));
 		lblMensajeVictori.setForeground(new Color(0, 255, 64));
 		panelBotones.add(lblMensajeVictori);
 
