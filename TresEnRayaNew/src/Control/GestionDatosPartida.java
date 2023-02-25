@@ -7,7 +7,6 @@ public class GestionDatosPartida {
 	private boolean Victoria;
 	public Tablero tablero = new Tablero();
 	private int turno;
-	private int fichasLibres;
 	private int fichaColumna[][]=new int [3][1];
 	private Coordenada posicionAnterior;
 	private Coordenada posicionNueva;
@@ -30,13 +29,6 @@ public class GestionDatosPartida {
 		this.turno = turno;
 	}
 
-	public int getFichasLibres() {
-		return fichasLibres;
-	}
-
-	public void setFichasLibres(int fichasLibres) {
-		this.fichasLibres = fichasLibres;
-	}
 
 	public int[][] getFichaColumna() {
 		return fichaColumna;
@@ -78,8 +70,18 @@ public class GestionDatosPartida {
 		setTurno(getTurno()+1);
 		
 	}
-	
-	
-	
+	public void imprimirTablero() {
+		  for (int i = 0; i < tablero.tablero.length; i++) {
+	            for (int j = 0; j < tablero.tablero.length; j++) {
+	                System.out.print(this.tablero.tablero[i][j] + "|");
+	            }
+	            System.out.println();
+	        }
+	        System.out.println();
+	    }
 	
 }
+	
+	
+	
+

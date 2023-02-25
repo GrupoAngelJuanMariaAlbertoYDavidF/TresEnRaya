@@ -7,7 +7,6 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import Control.GestionDatosPartida;
-import modelo.GestionDatos;
 import modelo.MyBotonera;
 import modelo.MyLabelVictory;
 
@@ -25,15 +24,8 @@ public class FramePrincipal extends JFrame {
 	protected MyBotonera panelTresEnRaya;
 	protected JPanel panelBotones;
 	private JPanel panelInfo;
-	private JLabel lblNumeroMovimientosJX;
-	private JLabel lblNumeroMovimientosJO;
-	protected GestionDatosPartida gestionDatosPartida= new GestionDatosPartida();
+	protected GestionDatosPartida gestionDatosPartida = new GestionDatosPartida();
 	private MyLabelVictory lblMensajeVictori;
-	
-
-	
-
-
 
 	/**
 	 * Create the frame.
@@ -46,52 +38,35 @@ public class FramePrincipal extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 3, 0, 0));
-		
+
 		panelInfo = new JPanel();
 		contentPane.add(panelInfo);
-		panelInfo.setLayout(null);
-		
-		JLabel lblMovimientosJX = new JLabel("Movimientos JX:");
-		lblMovimientosJX.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblMovimientosJX.setBounds(22, 93, 179, 86);
-		panelInfo.add(lblMovimientosJX);
-		
-		JLabel lblMovimientosJo = new JLabel("Movimientos JO:");
-		lblMovimientosJo.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblMovimientosJo.setBounds(22, 255, 179, 86);
-		panelInfo.add(lblMovimientosJo);
-		
-		lblNumeroMovimientosJX = new JLabel("0");
-		lblNumeroMovimientosJX.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumeroMovimientosJX.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblNumeroMovimientosJX.setBounds(188, 93, 72, 86);
-		panelInfo.add(lblNumeroMovimientosJX);
-		
-		lblNumeroMovimientosJO = new JLabel("0");
-		lblNumeroMovimientosJO.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNumeroMovimientosJO.setFont(new Font("Tahoma", Font.PLAIN, 23));
-		lblNumeroMovimientosJO.setBounds(188, 255, 72, 86);
-		panelInfo.add(lblNumeroMovimientosJO);
-		
+		panelInfo.setLayout(new GridLayout(0, 1, 0, 0));
+
+		JLabel lblTitulo = new JLabel("TRES EN RAYA");
+		lblTitulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitulo.setForeground(new Color(255, 0, 0));
+		lblTitulo.setFont(new Font("Source Serif Pro", Font.PLAIN, 33));
+		panelInfo.add(lblTitulo);
+
 		panelBotones = new JPanel();
 		contentPane.add(panelBotones);
-		
+		panelBotones.setLayout(new GridLayout(0, 1, 0, 0));
+
 		lblMensajeVictori = new MyLabelVictory("");
-		lblMensajeVictori.setFont(new Font("Tahoma", Font.PLAIN, 34));
+		lblMensajeVictori.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMensajeVictori.setFont(new Font("Source Serif Pro", Font.PLAIN, 34));
 		lblMensajeVictori.setForeground(new Color(0, 255, 64));
 		panelBotones.add(lblMensajeVictori);
-		
-		
-		
+
 		panelTresEnRaya = new MyBotonera(lblMensajeVictori);
 		contentPane.add(panelTresEnRaya);
 		panelTresEnRaya.setLayout(new GridLayout(3, 3, 4, 3));
-		
-		
+
 	}
 
 	public MyBotonera getPanelTresEnRaya() {
-	
+
 		return panelTresEnRaya;
 	}
 
@@ -103,14 +78,6 @@ public class FramePrincipal extends JFrame {
 		return panelInfo;
 	}
 
-	public JLabel getLblNumeroMovimientosJX() {
-		return lblNumeroMovimientosJX;
-	}
-
-	public JLabel getLblNumeroMovimientosJO() {
-		return lblNumeroMovimientosJO;
-	}
-
 	public MyLabelVictory getLblMensajeVictori() {
 		return lblMensajeVictori;
 	}
@@ -118,6 +85,4 @@ public class FramePrincipal extends JFrame {
 	public void setLblMensajeVictori(MyLabelVictory lblMensajeVictori) {
 		this.lblMensajeVictori = lblMensajeVictori;
 	}
-
-	
 }
